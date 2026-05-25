@@ -173,7 +173,7 @@ bin/kafka-topics.sh --create \
   --bootstrap-server localhost:9092 \
   --partitions 1 \
   --replication-factor 1 \
-  --topic streaming-02-kafka-case
+  --topic streaming-02-kafka-reed
 ```
 
 ### In VS Code Terminal 3: Run Project and Producer (producer)
@@ -201,6 +201,7 @@ uvx pre-commit run --all-files
 # run the producer
 clear
 uv run python -m streaming.kafka_producer_case
+uv run python -m streaming.kafka_producer_reed
 
 # do chores
 uv run ruff format .
@@ -225,6 +226,7 @@ Clear the terminal, then start the consumer.
 ```shell
 clear
 uv run python -m streaming.kafka_consumer_case
+uv run python -m streaming.kafka_consumer_reed
 ```
 
 To start fresh, see

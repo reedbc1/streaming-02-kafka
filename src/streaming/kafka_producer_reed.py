@@ -116,10 +116,10 @@ def verify_connection(settings: KafkaSettings) -> None:
 def get_message_key(message: dict[str, Any]) -> str:
     """Return the Kafka message key for a sale record."""
     try:
-        return str(message["region_id"])
+        return str(message["type"])
     except KeyError as error:
         msg = missing_csv_field_message(
-            field="region_id",
+            field="type",
             available_fields=list(message.keys()),
         )
         raise KeyError(msg) from error

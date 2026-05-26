@@ -68,7 +68,8 @@ ROOT_DIR: Final[Path] = Path.cwd()
 DATA_DIR: Final[Path] = ROOT_DIR / "data"
 OUTPUT_DIR: Final[Path] = DATA_DIR / "output"
 
-OUTPUT_CSV: Final[Path] = OUTPUT_DIR / "consumed_sales.csv"
+output_file_name: str = os.getenv("OUTPUT_CSV_NAME", "consumed_sales.csv")
+OUTPUT_CSV: Final[Path] = OUTPUT_DIR / output_file_name
 
 
 # ==========================================================

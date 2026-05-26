@@ -64,7 +64,9 @@ MESSAGE_INTERVAL_SECONDS: Final[float] = float(msg_interval_seconds)
 
 ROOT_DIR: Final[Path] = Path.cwd()
 DATA_DIR: Final[Path] = ROOT_DIR / "data"
-SALES_CSV: Final[Path] = DATA_DIR / "sales.csv"
+
+input_csv_name: str = os.getenv("INPUT_CSV_NAME", "sales.csv")
+SALES_CSV: Final[Path] = DATA_DIR / input_csv_name
 
 
 # ==========================================================
